@@ -3,8 +3,6 @@ library(Seurat)
 
 load(file = '../data/heart-data-cxcr4.RData')
 
-
-
 server <- function(input, output, session) {
   gp <- eventReactive(input$goGp, {
     

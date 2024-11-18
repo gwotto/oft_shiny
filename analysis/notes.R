@@ -4,7 +4,7 @@
 library(reticulate)
 library(tidyverse)
 
-## Seeing your enviroments
+## Seeing your enviroments  
 conda_list()
 
 ## Using environment miniconda3
@@ -28,3 +28,10 @@ load(file = 'heart-data-cxcr4.RData', verbose =TRUE)
 
 sceasy:::convertFormat(heart.data.cxcr4, from="seurat", to="anndata",
                        outFile='heart-data-cxcr4.h5ad')
+
+
+#### 2024-11-18 update Seurat object to a Seurat v4
+
+
+heart.data.cxcr4 <- UpdateSeuratObject(heart.data.cxcr4)
+save(heart.data.cxcr4, file="data/heart-data-cxcr4.RData")
